@@ -1,27 +1,13 @@
-class ButtonInspectorPlugin:
-    def __init__(self, controller):
-        self.controller = controller
-        print("ButtonInspectorPlugin: Plugin wurde geladen!")  # Debug-Ausgabe
-
-    def on_ready(self):
-        print("ButtonInspectorPlugin: Plugin ist bereit!")  # Debug-Ausgabe
-        self.list_buttons()
-
     def list_buttons(self):
-        print("ButtonInspectorPlugin: Liste der Tasten wird abgerufen...")  # Debug-Ausgabe
+        print("ButtonInspectorPlugin: Liste der Tasten wird abgerufen...")
         try:
-            buttons = self.controller.get_buttons()  # Beispiel-Methode
+            buttons = self.controller.get_buttons()
             if not buttons:
                 print("Keine Tasten gefunden.")
                 return
-            output_file = "/tmp/button_list.txt"  # Speicherort für die Ausgabe
 
-            with open(output_file, "w") as file:
-                for button in buttons:
-                    file.write(f"Taste gefunden: ID={button.id}, Name={button.name}\n")
-                    print(f"Taste gefunden: ID={button.id}, Name={button.name}")  # Terminal-Ausgabe
-
-            print(f"Tasten-Liste erfolgreich in {output_file} gespeichert.")
+            for button in buttons:
+                print(f"Taste gefunden: ID={button.id}, Name={button.name}")
 
         except Exception as e:
             print(f"Fehler beim Abrufen der Tasten: {e}")
