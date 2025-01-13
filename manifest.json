@@ -1,0 +1,9 @@
+{
+    "version": "1.0.0",
+    "id": "com_button_inspector",
+    "name": "Button Inspector",
+    "descriptions": {
+        "en_US": "Lists all buttons and their IDs."
+    },
+    "tags": ["Utility"]
+}
