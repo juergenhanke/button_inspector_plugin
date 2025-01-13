@@ -1,3 +1,11 @@
+class ButtonInspectorPlugin:
+    def __init__(self, controller):
+        self.controller = controller
+
+    def on_ready(self):
+        print("ButtonInspectorPlugin: Plugin ist bereit!")
+        self.list_buttons()
+
     def list_buttons(self):
         print("ButtonInspectorPlugin: Liste der Tasten wird abgerufen...")
         try:
